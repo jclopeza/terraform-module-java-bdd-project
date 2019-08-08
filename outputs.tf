@@ -4,9 +4,15 @@ output "public_ip_front" {
 output "public_ip_bdd" {
   value = "${aws_instance.bdd.public_ip}"
 }
-output "private_ip_front" {
-  value = "${aws_instance.front.private_ip}"
+output "aws_region" {
+  value = "${var.aws_region}"
 }
-output "private_ip_bdd" {
-  value = "${aws_instance.bdd.private_ip}"
+output "project_name" {
+  value = "${var.project_name}"
+}
+output "environment" {
+  value = "${var.environment}"
+}
+output "private_key_path" {
+  value = "${var.private_key_path}"
 }

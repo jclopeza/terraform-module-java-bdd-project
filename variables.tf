@@ -18,3 +18,7 @@ variable "public_key_path" {
   description = "Ubicación de la clave pública que será instalada en los hosts remotos"
   default     = "~/.ssh/id_rsa.pub"
 }
+variable "private_key_path" {
+  description = "Ubicación de la clave privada para acceder a los hosts remotos"
+  default     = "~/.ssh/id_rsa"
+}
