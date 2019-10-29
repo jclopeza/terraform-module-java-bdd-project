@@ -19,6 +19,46 @@ resource "aws_security_group" "allow_8080" {
     Name = "allow_8080"
   }
 }
+resource "aws_security_group" "allow_4516" {
+  vpc_id      = "${aws_vpc.vpc.id}"
+  name        = "allow_4516"
+  description = "Allow 4516 inbound traffic"
+  ingress {
+    from_port       = 4516
+    to_port         = 4516
+    protocol        = "tcp"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "allow_4516"
+  }
+}
+resource "aws_security_group" "allow_5516" {
+  vpc_id      = "${aws_vpc.vpc.id}"
+  name        = "allow_5516"
+  description = "Allow 5516 inbound traffic"
+  ingress {
+    from_port       = 5516
+    to_port         = 5516
+    protocol        = "tcp"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+  egress {
+    from_port       = 0
+    to_port         = 0
+    protocol        = "-1"
+    cidr_blocks     = ["0.0.0.0/0"]
+  }
+  tags = {
+    Name = "allow_5516"
+  }
+}
 resource "aws_security_group" "allow_22" {
   vpc_id      = "${aws_vpc.vpc.id}"
   name        = "allow_22"

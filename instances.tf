@@ -6,6 +6,8 @@ resource "aws_instance" "front" {
   subnet_id = "${aws_subnet.public.id}"
   vpc_security_group_ids = [
       "${aws_security_group.allow_22.id}",
+      "${aws_security_group.allow_4516.id}",
+      "${aws_security_group.allow_5516.id}",
       "${aws_security_group.allow_8080.id}"
     ]
   tags = {
